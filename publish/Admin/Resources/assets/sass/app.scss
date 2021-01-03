@@ -1,0 +1,36 @@
+.form-group {
+    .bmd-label-static {
+        top: inherit;
+        position: relative;
+        line-height: 1.5;
+        margin-bottom: 0;
+        padding-top: calc(.375rem + 1px);
+        padding-bottom: calc(.375rem + 1px);
+    }
+}
+.form-control {
+       &.is-invalid {
+        background-size: 100% 100%, 100% 100%;
+        transition-duration: 0.3s;
+        box-shadow: none;
+        background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+    }
+}
+.help-block{
+    color: #f44336 !important
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+

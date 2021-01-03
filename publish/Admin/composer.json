@@ -1,0 +1,26 @@
+{
+    "type" : "laravel-module",
+    "name": "jjanampa/laraveladmin-module",
+    "description": "",
+    "authors": [
+        {
+            "name": "juan sanchez",
+            "email": "juanperu@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Admin\\": ""
+        }
+    },
+    "require": {
+    }
+}
