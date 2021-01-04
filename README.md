@@ -40,18 +40,18 @@ After initializing instance of Laravel
    `admin_users, admin_roles, admin_permissions, admin_permission_role, admin_role_user, pages, settings`
 3. Autoloading: By default, module classes are not loaded automatically. You can autoload your modules using `psr-4` in
    composer.json.
-``` json
-{
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/",
-      "Modules\\": "Modules/"
-    }
-  }
-}
-```
-
-**Tip: don't forget to run `composer dump-autoload` afterwards.**
+   ``` json
+   {
+     "autoload": {
+       "psr-4": {
+         "App\\": "app/",
+         "Modules\\": "Modules/"
+       }
+     }
+   }
+   ```
+   
+   **Tip: don't forget to run `composer dump-autoload` afterwards.**
 
 4. add config from admin in config/auth.php
    
