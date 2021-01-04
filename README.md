@@ -13,13 +13,13 @@ Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid 
 3. Page CRUD:
 4. Settings:
 
-###Packages used:
+#### Packages used:
 - [Laravel-Modules](https://github.com/nWidart/laravel-modules)
 - [Laravel UI](https://github.com/laravel/ui)
 - [laravelCollective HTML](https://github.com/LaravelCollective/html)
 - [Laravel-activitylog](https://github.com/spatie/laravel-activitylog)
 
-###Assets used:
+#### Assets used:
 - [Bootstrap 4](https://getbootstrap.com)
 - [Material Dashboard](https://github.com/creativetimofficial/material-dashboard)
 --------
