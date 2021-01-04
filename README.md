@@ -1,8 +1,12 @@
+
 # laravel-admin
 Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid scaffolding & development.
 * The project is based on the [Laravel Admin Panel](https://github.com/appzcoder/laravel-admin).
 * This package has a modular approach, for which it uses the Laravel module, see the documentation for more information on this approach: https://github.com/nWidart/laravel-modules
 * Installing this package will publish the `Admin` module in the `Modules` folder at the root of your project.
+  
+
+  ![Dashboard](https://user-images.githubusercontent.com/1957176/103500880-7e4ca300-4e1a-11eb-9ac6-77e052d71033.png)
 ### Requirements
     Laravel >=7
     PHP >= 7.0
@@ -123,3 +127,13 @@ The default admin login is:
 Learn more about ACL from [here](https://laravel.com/docs/master/authorization)
 
 For activity log please read `spatie/laravel-activitylog` [docs](https://docs.spatie.be/laravel-activitylog/v2/introduction)
+## Screenshots
+| Users | Roles | Permissions |
+| --- | --- | ---  |
+| ![Users](https://user-images.githubusercontent.com/1957176/103501360-f36ca800-4e1b-11eb-91b3-ea9995aa9759.png)  | ![Roles](https://user-images.githubusercontent.com/1957176/103501366-f4053e80-4e1b-11eb-9e7b-e9ccdea6ebf1.png)  | ![Permissions](https://user-images.githubusercontent.com/1957176/103501367-f49dd500-4e1b-11eb-8025-302af1fb1709.png)
+| Pages | Activity Log | Settings |
+| --- | --- | ---  |
+| ![Pages](https://user-images.githubusercontent.com/1957176/103501368-f49dd500-4e1b-11eb-93fd-d0189b1c56e3.png)  | ![Activity Log](https://user-images.githubusercontent.com/1957176/103501370-f5366b80-4e1b-11eb-9326-9f6d66e23531.png) | ![Settings](https://user-images.githubusercontent.com/1957176/103501371-f5366b80-4e1b-11eb-8238-15db7a9ec133.png)
+| Profile | Login| Forgot Password |
+| --- | --- | ---  |
+| ![Profile](https://user-images.githubusercontent.com/1957176/103501372-f5cf0200-4e1b-11eb-8f33-ee9f7975e42e.png)  | ![Login](https://user-images.githubusercontent.com/1957176/103501373-f6679880-4e1b-11eb-89ca-b12f36ed4ea4.png) | ![Forgot Password](https://user-images.githubusercontent.com/1957176/103501374-f7002f00-4e1b-11eb-89e4-2cbd572bfa53.png)
