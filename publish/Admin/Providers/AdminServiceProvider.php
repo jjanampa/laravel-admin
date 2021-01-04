@@ -45,10 +45,10 @@ class AdminServiceProvider extends ServiceProvider
         $router->aliasMiddleware('replaceLogGuard', ReplaceLogGuard::class);
         $router->aliasMiddleware('role', CheckRole::class);
         ResetPassword::createUrlUsing(function ($user, string $token) {
-            return  route('admin.password.reset', [
+            return  url(route('admin.password.reset', [
                 'token' => $token,
                 'email' => $user->email,
-            ], false);
+            ], false));
         });
 
     }

@@ -20,9 +20,6 @@ Route::name('admin.')->prefix('admin')->middleware(['replaceLogGuard'])->group(f
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-    Route::get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-    Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
-
 });
 
 Route::name('admin.')->prefix('admin')->middleware(['authAdmin', 'replaceLogGuard'])->group(function() {
