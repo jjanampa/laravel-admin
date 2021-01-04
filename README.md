@@ -31,21 +31,8 @@ Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid 
 --------
 ## Installation
 After initializing instance of Laravel
-1. Run
-    ```
-    composer require jjanampa/laravel-admin
-    ```
-
-2. Install the admin package.
-    ```
-    php artisan laravel-admin:install
-    ```
-   > Service provider will be discovered automatically.
-   
-   > execute `php artisan laravel-admin:install --force` to force the installation, this process recreate the `Admin` module, removes and recreates the following tables:
-   `admin_users, admin_roles, admin_permissions, admin_permission_role, admin_role_user, pages, settings`
-3. Autoloading: By default, module classes are not loaded automatically. You can autoload your modules using `psr-4` in
-   composer.json.
+1. Autoloading: By default, module classes are not loaded automatically. You can autoload your modules using `psr-4`, add `"Modules\\": "Modules/"` in
+   **composer.json**.
    ``` json
    {
      "autoload": {
@@ -56,10 +43,23 @@ After initializing instance of Laravel
      }
    }
    ```
-   
-   **Tip: don't forget to run `composer dump-autoload` afterwards.**
 
-4. add config from admin in config/auth.php
+   **Tip: don't forget to run `composer dump-autoload` afterwards.**
+2. Run
+    ```
+    composer require jjanampa/laravel-admin
+    ```
+
+3. Install the admin package.
+    ```
+    php artisan laravel-admin:install
+    ```
+   > Service provider will be discovered automatically.
+   
+   > execute `php artisan laravel-admin:install --force` to force the installation, this process recreate the `Admin` module, removes and recreates the following tables:
+   `admin_users, admin_roles, admin_permissions, admin_permission_role, admin_role_user, pages, settings`
+
+4. add config from admin in **config/auth.php**
    
     new config guard:
    ```php
