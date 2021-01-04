@@ -35,6 +35,9 @@ After initializing instance of Laravel
     php artisan laravel-admin:install
     ```
    > Service provider will be discovered automatically.
+   
+   > execute `php artisan laravel-admin:install --force` to force the installation, this process recreate the `Admin` module, removes and recreates the following tables:
+   `admin_users, admin_roles, admin_permissions, admin_permission_role, admin_role_user, pages, settings`
 3. Autoloading: By default, module classes are not loaded automatically. You can autoload your modules using `psr-4` in
    composer.json.
 ``` json
