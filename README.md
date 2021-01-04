@@ -16,6 +16,8 @@ Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid 
 2. Activity Log:
 3. Page CRUD:
 4. Settings:
+5. Login, Forgot Password
+6. Profile
 
 #### Packages used:
 - [Laravel-Modules](https://github.com/nWidart/laravel-modules)
