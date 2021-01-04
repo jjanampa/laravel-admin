@@ -3,6 +3,10 @@ Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid 
 * The project is based on the [Laravel Admin Panel](https://github.com/appzcoder/laravel-admin).
 * This package has a modular approach, for which it uses the Laravel module, see the documentation for more information on this approach: https://github.com/nWidart/laravel-modules
 * Installing this package will publish the `Admin` module in the `Modules` folder at the root of your project.
+### Requirements
+    Laravel >=7
+    PHP >= 7.0
+
 ### Features:
 1. Admin User, Role & Permission Manager:
 2. Activity Log:
@@ -14,6 +18,7 @@ Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid 
 - [Laravel UI](https://github.com/laravel/ui)
 - [laravelCollective HTML](https://github.com/LaravelCollective/html)
 - [Laravel-activitylog](https://github.com/spatie/laravel-activitylog)
+
 ####Assets used:
 - [Bootstrap 4](https://getbootstrap.com)
 - [Material Dashboard](https://github.com/creativetimofficial/material-dashboard)
@@ -94,29 +99,24 @@ The default admin login is:
 
     ```php
     // Check role anywhere
-    if (Auth::check() && Auth::user()->hasRole('admin')) {
+    if (auth('admin')->user()->hasRole('editor')) {
         // Do admin stuff here
     } else {
         // Do nothing
     }
 
     // Check role in route middleware
-    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
-       Route::get('/', ['uses' => 'AdminController@index']);
-    });
-
-    // Check permission in route middleware
-    Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'can:write_user']], function () {
-       Route::get('/', ['uses' => 'AdminController@index']);
-    });
+   Route::resource('pages', 'Dashboard\PagesController')->middleware('role:editor');
     ```
 
 6. For checking permissions see below:
 
     ```php
-    if ($user->can('permission-name')) {
+    if (auth('admin')->user()->can('permission-name')) {
         // Do something
     }
     ```
 
 Learn more about ACL from [here](https://laravel.com/docs/master/authorization)
+
+For activity log please read `spatie/laravel-activitylog` [docs](https://docs.spatie.be/laravel-activitylog/v2/introduction)
