@@ -1,6 +1,7 @@
 {
     "name": "jjanampa/laravel-admin",
     "description": "Laravel admin dashboard",
+    "license": "MIT",
     "authors": [
         {
             "name": "juan sanchez",
