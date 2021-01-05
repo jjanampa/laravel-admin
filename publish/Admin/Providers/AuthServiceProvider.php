@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Providers;
 
+use Illuminate\Support\Arr;
 use Modules\Admin\Entities\AdminPermission;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -56,5 +57,26 @@ class AuthServiceProvider extends ServiceProvider
             return AdminPermission::with('roles')->get();
         });
 
+    }
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register(): void
+    {
+        $this->loadAdminAuthConfig();
+    }
+
+    /**
+     * Setup auth configuration.
+     *
+     * @return void
+     */
+    protected function loadAdminAuthConfig()
+    {
+        $configModule = module_path ('Admin','Config/config.php');
+        $arrayConfig = include($configModule);
+        config(Arr::dot($arrayConfig['auth'], 'auth.'));
     }
 }

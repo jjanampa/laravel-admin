@@ -1,7 +1,7 @@
 
 # laravel-admin
-Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid scaffolding & development.
-* The project is based on the [Laravel Admin Panel](https://github.com/appzcoder/laravel-admin).
+Laravel Admin is a drop-in admin panel package for Laravel which promotes rapid scaffolding & development, uses [Material Dashboard](https://www.creative-tim.com/product/material-dashboard-laravel)
+* The project is based on the [Laravel Admin Panel](https://github.com/appzcoder/laravel-admin) and [Material Dashboard Laravel](https://github.com/creativetimofficial/material-dashboard-laravel).
 * This package has a modular approach, for which it uses the Laravel module, see the documentation for more information on this approach: https://github.com/nWidart/laravel-modules
 * Installing this package will publish the `Admin` module in the `Modules` folder at the root of your project.
   
@@ -58,33 +58,7 @@ After initializing instance of Laravel
    
    > execute `php artisan laravel-admin:install --force` to force the installation, this process recreate the `Admin` module, removes and recreates the following tables:
    `admin_users, admin_roles, admin_permissions, admin_permission_role, admin_role_user, pages, settings`
-
-4. add config from admin in **config/auth.php**
    
-    new config guard:
-   ```php
-      'admin' => [
-          'driver' => 'session',
-          'provider' => 'admins',
-       ],
-   ```
-
-    new config providers:
-   ```php
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => \Modules\Admin\Entities\AdminUser::class,
-        ],
-   ```
-    new config passwords:
-   ```php
-        'admins' => [
-            'provider' => 'admins',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-   ```
 ### Logging In
 
 Visit `(APP_URL)/admin` to access the admin panel.
