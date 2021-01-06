@@ -33,7 +33,9 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        Paginator::useBootstrap();
+        if (app()->version() >= '8.0') {
+            Paginator::useBootstrap();
+        }
 
         $this->registerTranslations();
         $this->registerConfig();
