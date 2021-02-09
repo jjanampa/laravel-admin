@@ -73,7 +73,8 @@ class CreateAdminUsersRolesPermissionsTables extends Migration
         });
 
         Artisan::call('db:seed', [
-            '--class' => \Modules\Admin\Database\Seeders\AdminUsersTableSeeder::class
+            '--class' => \Modules\Admin\Database\Seeders\AdminUsersTableSeeder::class,
+            '--force' => true
         ]);
     }
 
