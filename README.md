@@ -38,7 +38,7 @@ After initializing instance of Laravel
      "autoload": {
        "psr-4": {
          "App\\": "app/",
-         "Modules\\": "Modules/"
+         "Modules\\": "Modules/",
        }
      }
    }
