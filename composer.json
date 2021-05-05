@@ -26,6 +26,6 @@
         "laravel/ui": "^2.0|^3.0",
         "laravelcollective/html": "^6.0",
         "nwidart/laravel-modules": "^6.2|^7.0|^8.0",
-        "spatie/laravel-activitylog": "^3.9"
+        "spatie/laravel-activitylog": "^3.9|^4.0"
     }
 }
