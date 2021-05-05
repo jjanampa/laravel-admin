@@ -104,9 +104,9 @@ Learn more about ACL from [here](https://laravel.com/docs/master/authorization)
 
 For activity log please read `spatie/laravel-activitylog` [docs](https://docs.spatie.be/laravel-activitylog/v2/introduction)
 ## Screenshots
-| Users | Roles | Permissions |
+| Admin Users | Admin Roles | Admin Permissions |
 | --- | --- | ---  |
-| ![Users](https://user-images.githubusercontent.com/1957176/103501360-f36ca800-4e1b-11eb-91b3-ea9995aa9759.png)  | ![Roles](https://user-images.githubusercontent.com/1957176/103501366-f4053e80-4e1b-11eb-9e7b-e9ccdea6ebf1.png)  | ![Permissions](https://user-images.githubusercontent.com/1957176/103501367-f49dd500-4e1b-11eb-8025-302af1fb1709.png)
+| ![Admin Users](https://user-images.githubusercontent.com/1957176/103501360-f36ca800-4e1b-11eb-91b3-ea9995aa9759.png)  | ![Admin Roles](https://user-images.githubusercontent.com/1957176/103501366-f4053e80-4e1b-11eb-9e7b-e9ccdea6ebf1.png)  | ![Admin Permissions](https://user-images.githubusercontent.com/1957176/103501367-f49dd500-4e1b-11eb-8025-302af1fb1709.png)
 | Pages | Activity Log | Settings |
 | ![Pages](https://user-images.githubusercontent.com/1957176/103501368-f49dd500-4e1b-11eb-93fd-d0189b1c56e3.png)  | ![Activity Log](https://user-images.githubusercontent.com/1957176/103501370-f5366b80-4e1b-11eb-9326-9f6d66e23531.png) | ![Settings](https://user-images.githubusercontent.com/1957176/103501371-f5366b80-4e1b-11eb-8238-15db7a9ec133.png)
 | Profile | Login| Forgot Password |
