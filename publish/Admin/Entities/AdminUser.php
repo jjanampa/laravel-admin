@@ -2,11 +2,10 @@
 
 namespace Modules\Admin\Entities;
 
-use Modules\Admin\Entities\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Modules\Admin\Entities\AdminRole;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 class AdminUser extends Authenticatable
 {
@@ -41,6 +40,11 @@ class AdminUser extends Authenticatable
     public function getDescriptionForEvent($eventName)
     {
         return __CLASS__ . " model has been {$eventName}";
+    }
+
+    public function getActivitylogOptions()
+    {
+        return LogOptions::defaults();
     }
 
 }

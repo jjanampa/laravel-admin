@@ -3,9 +3,9 @@
 namespace Modules\Admin\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 class AdminRole extends Model
 {
@@ -58,5 +58,10 @@ class AdminRole extends Model
     public function getDescriptionForEvent($eventName)
     {
         return __CLASS__ . " model has been {$eventName}";
+    }
+
+    public function getActivitylogOptions()
+    {
+        return LogOptions::defaults();
     }
 }
