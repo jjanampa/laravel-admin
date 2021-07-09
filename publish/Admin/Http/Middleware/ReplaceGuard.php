@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Http\Request;
 
-class ReplaceLogGuard
+class ReplaceGuard
 {
     /**
      * Handle an incoming request.

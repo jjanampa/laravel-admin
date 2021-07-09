@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factory;
 use Modules\Admin\Http\Middleware\Authenticate;
 use Modules\Admin\Http\Middleware\CheckRole;
 use Modules\Admin\Http\Middleware\RedirectIfAuthenticated;
-use Modules\Admin\Http\Middleware\ReplaceLogGuard;
+use Modules\Admin\Http\Middleware\ReplaceGuard;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 
@@ -43,7 +43,7 @@ class AdminServiceProvider extends ServiceProvider
 
         $router->aliasMiddleware('authAdmin', Authenticate::class);
         $router->aliasMiddleware('guestAdmin', RedirectIfAuthenticated::class);
-        $router->aliasMiddleware('replaceLogGuard', ReplaceLogGuard::class);
+        $router->aliasMiddleware('replaceGuard', ReplaceGuard::class);
         $router->aliasMiddleware('role', CheckRole::class);
 
     }

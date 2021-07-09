@@ -12,7 +12,7 @@ use Modules\Admin\Http\Controllers\Dashboard\PagesController;
 use Modules\Admin\Http\Controllers\Dashboard\ActivityLogsController;
 use Modules\Admin\Http\Controllers\Dashboard\SettingsController;
 
-Route::name('admin.')->prefix('admin')->middleware(['replaceLogGuard'])->group(function() {
+Route::name('admin.')->prefix('admin')->middleware(['replaceGuard'])->group(function() {
     Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
     Route::post('login', [LoginController::class, 'login']);
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
@@ -24,7 +24,7 @@ Route::name('admin.')->prefix('admin')->middleware(['replaceLogGuard'])->group(f
 
 });
 
-Route::name('admin.')->prefix('admin')->middleware(['authAdmin', 'replaceLogGuard'])->group(function() {
+Route::name('admin.')->prefix('admin')->middleware(['authAdmin', 'replaceGuard'])->group(function() {
 
     Route::get('/', [IndexController::class, 'index'])->name('dashboard');
 
