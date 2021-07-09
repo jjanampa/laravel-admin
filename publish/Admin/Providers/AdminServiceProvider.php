@@ -2,7 +2,6 @@
 
 namespace Modules\Admin\Providers;
 
-use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
@@ -46,12 +45,6 @@ class AdminServiceProvider extends ServiceProvider
         $router->aliasMiddleware('guestAdmin', RedirectIfAuthenticated::class);
         $router->aliasMiddleware('replaceLogGuard', ReplaceLogGuard::class);
         $router->aliasMiddleware('role', CheckRole::class);
-        ResetPassword::createUrlUsing(function ($user, string $token) {
-            return  url(route('admin.password.reset', [
-                'token' => $token,
-                'email' => $user->email,
-            ], false));
-        });
 
     }
 

@@ -3,13 +3,9 @@
 namespace Modules\Admin\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\PasswordBroker;
-use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
 use Illuminate\View\View;
 
 class ResetPasswordController extends Controller
@@ -42,26 +38,6 @@ class ResetPasswordController extends Controller
         return view('admin::auth.passwords.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
-    }
-
-    /**
-     * Get the broker to be used during password reset.
-     *
-     * @return PasswordBroker
-     */
-    protected function broker(): PasswordBroker
-    {
-        return Password::broker('admins');
-    }
-
-    /**
-     * Get the guard to be used during authentication.
-     *
-     * @return StatefulGuard
-     */
-    public function guard(): StatefulGuard
-    {
-        return Auth::guard('admin');
     }
 
     /**

@@ -1,7 +1,8 @@
 
-function showNotification(typeAlert, message) {
+function showNotification(message, typeAlert) {
+    typeAlert = typeof typeAlert !== 'undefined' ? typeAlert : 'success';
     let color = {
-        '': {color: 'primary' , icon: 'add_alert' },
+        'primary': {color: 'primary' , icon: 'add_alert' },
         'info': {color: 'info', icon: 'add_alert' },
         'error': {color:'danger', icon : 'error' },
         'success': {color:'success', icon : 'check_circle' },
@@ -17,6 +18,7 @@ function showNotification(typeAlert, message) {
     }, {
         type: type,
         timer: 4000,
+        z_index: 1051,
         placement: {
             from: 'top',
             align: 'right'

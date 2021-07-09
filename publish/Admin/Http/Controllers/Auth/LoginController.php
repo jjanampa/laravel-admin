@@ -2,12 +2,10 @@
 
 namespace Modules\Admin\Http\Controllers\Auth;
 
-use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -51,16 +49,6 @@ class LoginController extends Controller
         return $request->wantsJson()
             ? new JsonResponse([], 204)
             : redirect()->route('admin.login');
-    }
-
-    /**
-     * Get the guard to be used during authentication.
-     *
-     * @return StatefulGuard
-     */
-    public function guard(): StatefulGuard
-    {
-        return Auth::guard('admin');
     }
 
     /**

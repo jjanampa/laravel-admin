@@ -1,36 +1,272 @@
-.form-group {
-    .bmd-label-static {
-        top: inherit;
-        position: relative;
-        line-height: 1.5;
-        margin-bottom: 0;
-        padding-top: calc(.375rem + 1px);
-        padding-bottom: calc(.375rem + 1px);
-    }
-}
-.form-control {
-       &.is-invalid {
-        background-size: 100% 100%, 100% 100%;
-        transition-duration: 0.3s;
-        box-shadow: none;
-        background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
-    }
+.main-panel>.content{
+  margin-top: 30px;
 }
 .help-block{
-    color: #f44336 !important
+  color: #f44336 !important
+}
+.modal .card-img-top{
+  max-width: 100%;
+  width: auto;
+  max-height: 300px;
+  height: auto;
+  background-color: #3C4858;
+}
+
+
+//form
+input[type=file] {
+  display: block;
+  width: 100%;
+  position: inherit;
+  z-index: inherit;
+  opacity: 1;
+}
+.form-group {
+  input[type=file] {
+    display: block;
+    width: 100%;
+    position: inherit;
+    z-index: inherit;
+    opacity: 1;
+  }
+}
+.form-control {
+  &.is-invalid {
+    background-size: 100% 100%, 100% 100%;
+    transition-duration: 0.3s;
+    box-shadow: none;
+    background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+  }
+}
+.form-horizontal {
+  .form-group {
+    .bmd-label-static, label {
+      top: inherit;
+      position: relative;
+      line-height: 1.5;
+      margin-bottom: 0;
+      padding-top: calc(.375rem + 1px);
+      padding-bottom: calc(.375rem + 1px);
+    }
+
+    input[type=file] {
+      z-index: inherit;
+    }
+  }
+}
+select {
+  -moz-appearance: button;
+  -webkit-appearance: button;
+
+  &.form-control {
+    -moz-appearance: button;
+    -webkit-appearance: button;
+  }
 }
 
 /* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+
+.material-icons {
+  &.md-18 {
+    font-size: 18px;
+  }
+
+  &.md-24 {
+    font-size: 24px;
+  }
+
+  &.md-36 {
+    font-size: 36px;
+  }
+
+  &.md-48 {
+    font-size: 48px;
+  }
+
+  &.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+
+    &.md-inactive {
+      color: rgba(0, 0, 0, 0.26);
+    }
+  }
+
+  &.md-light {
+    color: rgba(255, 255, 255, 1);
+
+    &.md-inactive {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 
 /* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
+/* Rules file input . */
+
+.btn-file > input {
+  position: absolute !important;;
+  top: 0 !important;;
+  right: 0 !important;;
+  width: 100% !important;;
+  height: 100% !important;;
+  margin: 0;
+  font-size: 23px;
+  cursor: pointer;
+  filter: alpha(opacity = 0);
+  opacity: 0 !important;;
+  direction: ltr;
+}
+
+.fileinput {
+  display: inline-block;
+  margin-bottom: 9px;
+
+  .form-control {
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: text;
+  }
+
+  .thumbnail {
+    display: inline-block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 250px;
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
+    &.img-circle {
+      border-radius: 50%;
+      max-width: 100px;
+    }
+
+    > img {
+      max-height: 100%;
+      width: 100%;
+    }
+  }
+
+  .btn {
+    vertical-align: middle;
+  }
+}
+
+.fileinput-exists .fileinput-new, .fileinput-new .fileinput-exists {
+  display: none;
+}
+
+.fileinput-inline .fileinput-controls {
+  display: inline;
+}
+
+.fileinput-filename {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.form-control .fileinput-filename {
+  vertical-align: bottom;
+}
+
+.fileinput.input-group {
+  display: table;
+
+  > {
+    * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-file {
+      z-index: 1;
+    }
+  }
+}
+
+.fileinput-new {
+  &.input-group .btn-file, .input-group .btn-file {
+    border-radius: 0 4px 4px 0;
+  }
+
+  &.input-group .btn-file.btn-sm, .input-group .btn-file.btn-sm, &.input-group .btn-file.btn-xs, .input-group .btn-file.btn-xs, &.input-group .btn-group-sm > .btn-file.btn, .input-group .btn-group-sm > .btn-file.btn {
+    border-radius: 0 3px 3px 0;
+  }
+
+  &.input-group .btn-file.btn-lg, .input-group .btn-file.btn-lg, &.input-group .btn-group-lg > .btn-file.btn, .input-group .btn-group-lg > .btn-file.btn {
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+.form-group {
+  &.has-warning .fileinput {
+    .fileinput-preview {
+      color: #ff9800;
+    }
+
+    .thumbnail {
+      border-color: #ff9800;
+    }
+  }
+
+  &.has-error .fileinput {
+    .fileinput-preview {
+      color: #f44336;
+    }
+
+    .thumbnail {
+      border-color: #f44336;
+    }
+  }
+
+  &.has-success .fileinput {
+    .fileinput-preview {
+      color: #4caf50;
+    }
+
+    .thumbnail {
+      border-color: #4caf50;
+    }
+  }
+}
+
+.input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+
+.thumbnail {
+  border: 0 none;
+  border-radius: 4px;
+  padding: 0;
+}
+
+
+// spinner
+// Rotating border
+//
+
+@keyframes spinner-border {
+  to { transform: rotate(360deg); }
+}
+
+.spinner-border {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: .25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: .75s linear infinite spinner-border;
+  animation: .75s linear infinite spinner-border;
+}
+.btn.disabled, .btn:disabled {
+  cursor: default;
+}

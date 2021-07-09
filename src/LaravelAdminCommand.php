@@ -80,14 +80,8 @@ class LaravelAdminCommand extends Command
 
     protected function cleanModule()
     {
+        $this->call('module:migrate-reset', ['Admin']);
         (new Filesystem)->deleteDirectory($this->getModulePath());
-        Schema::dropIfExists('admin_permission_role');
-        Schema::dropIfExists('admin_permissions');
-        Schema::dropIfExists('admin_role_user');
-        Schema::dropIfExists('admin_roles');
-        Schema::dropIfExists('admin_users');
-        Schema::dropIfExists('pages');
-        Schema::dropIfExists('settings');
     }
 
     /**

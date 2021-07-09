@@ -1,41 +1,43 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::name('admin.')->prefix('admin')->middleware(['replaceLogGuard'])->group(function() {
-    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-    Route::post('login', 'Auth\LoginController@login');
-    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+use Modules\Admin\Http\Controllers\Auth\LoginController;
+use Modules\Admin\Http\Controllers\Auth\ForgotPasswordController;
+use Modules\Admin\Http\Controllers\Auth\ResetPasswordController;
+use Modules\Admin\Http\Controllers\Dashboard\IndexController;
+use Modules\Admin\Http\Controllers\Dashboard\ProfileController;
+use Modules\Admin\Http\Controllers\Dashboard\RolesController;
+use Modules\Admin\Http\Controllers\Dashboard\PermissionsController;
+use Modules\Admin\Http\Controllers\Dashboard\UsersController;
+use Modules\Admin\Http\Controllers\Dashboard\PagesController;
+use Modules\Admin\Http\Controllers\Dashboard\ActivityLogsController;
+use Modules\Admin\Http\Controllers\Dashboard\SettingsController;
 
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+Route::name('admin.')->prefix('admin')->middleware(['replaceLogGuard'])->group(function() {
+    Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
+    Route::post('login', [LoginController::class, 'login']);
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+    Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+    Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 });
 
 Route::name('admin.')->prefix('admin')->middleware(['authAdmin', 'replaceLogGuard'])->group(function() {
 
-    Route::get('/', 'Dashboard\IndexController@index')->name('dashboard');
+    Route::get('/', [IndexController::class, 'index'])->name('dashboard');
 
-    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'Dashboard\ProfileController@edit']);
-    Route::put('profile', ['as' => 'profile.update', 'uses' => 'Dashboard\ProfileController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'Dashboard\ProfileController@password']);
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
 
-    Route::resource('roles', 'Dashboard\RolesController');
-    Route::resource('permissions', 'Dashboard\PermissionsController');
-    Route::resource('users', 'Dashboard\UsersController');
-    Route::resource('pages', 'Dashboard\PagesController');
-    Route::resource('activitylogs', 'Dashboard\ActivityLogsController')->only([
+    Route::resource('roles', RolesController::class);
+    Route::resource('permissions', PermissionsController::class);
+    Route::resource('users', UsersController::class);
+    Route::resource('pages', PagesController::class);
+    Route::resource('activitylogs', ActivityLogsController::class)->only([
         'index', 'show', 'destroy'
     ]);
-    Route::resource('settings', 'Dashboard\SettingsController');
+    Route::resource('settings', SettingsController::class);
 });

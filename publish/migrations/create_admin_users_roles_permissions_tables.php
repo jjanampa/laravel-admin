@@ -89,5 +89,6 @@ class CreateAdminUsersRolesPermissionsTables extends Migration
         Schema::dropIfExists('admin_role_user');
         Schema::dropIfExists('admin_roles');
         Schema::dropIfExists('admin_permissions');
+        Schema::dropIfExists('admin_users');
     }
 }

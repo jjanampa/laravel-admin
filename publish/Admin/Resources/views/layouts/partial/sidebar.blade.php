@@ -17,15 +17,39 @@
                     <p>{{ __('Dashboard') }}</p>
                 </a>
             </li>
-            <li class="nav-item">
+{{--            @if (Auth::guard('admin')->user()->hasRole('administrador'))--}}
+{{--            @if (auth('admin')->user()->hasRole('administrador'))--}}
+{{--            @if (auth('admin')->user()->can('pagina'))--}}
+                <li class="nav-item {{ Request::routeIs('admin.pages.*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.pages.index') }}">
+                        <i class="material-icons">web</i>
+                        <p> {{ __('Pages') }} </p>
+                    </a>
+                </li>
+{{--            @endif--}}
+
+            <li class="nav-item {{ Request::routeIs('admin.activitylogs.*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.activitylogs.index') }}">
+                    <i class="material-icons">toc</i>
+                    <p> {{ __('Activity Logs') }} </p>
+                </a>
+            </li>
+
+            <li class="nav-item active-pro">
                 <a class="nav-link" data-toggle="collapse" href="#userManagement" aria-expanded="true">
-                    <i class="material-icons">face</i>
-                    <p>{{ __('User Management') }}
+                    <i class="material-icons">settings</i>
+                    <p>{{ __('Settings') }}
                         <b class="caret"></b>
                     </p>
                 </a>
                 <div class="collapse show" id="userManagement">
                     <ul class="nav">
+                        <li class="nav-item {{ Request::routeIs('admin.settings.*') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('admin.settings.index') }}">
+                                <i class="material-icons">settings</i>
+                                <p> {{ __('Settings') }} </p>
+                            </a>
+                        </li>
                         <li class="nav-item {{ Request::routeIs('admin.users.*') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin.users.index') }}">
                                 <span class="sidebar-mini"> UM </span>
@@ -46,29 +70,6 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-{{--            @if (Auth::guard('admin')->user()->hasRole('administrador'))--}}
-{{--            @if (auth('admin')->user()->hasRole('administrador'))--}}
-{{--            @if (auth('admin')->user()->can('pagina'))--}}
-                <li class="nav-item {{ Request::routeIs('admin.pages.*') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('admin.pages.index') }}">
-                        <i class="material-icons">web</i>
-                        <p> {{ __('Pages') }} </p>
-                    </a>
-                </li>
-{{--            @endif--}}
-
-            <li class="nav-item {{ Request::routeIs('admin.activitylogs.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.activitylogs.index') }}">
-                    <i class="material-icons">toc</i>
-                    <p> {{ __('Activity Logs') }} </p>
-                </a>
-            </li>
-            <li class="nav-item {{ Request::routeIs('admin.settings.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.settings.index') }}">
-                    <i class="material-icons">settings</i>
-                    <p> {{ __('Settings') }} </p>
-                </a>
             </li>
 
         </ul>
