@@ -80,8 +80,15 @@ class LaravelAdminCommand extends Command
 
     protected function cleanModule()
     {
-        $this->call('module:migrate-reset', ['Admin']);
+
         (new Filesystem)->deleteDirectory($this->getModulePath());
+        Schema::dropIfExists('admin_permission_role');
+        Schema::dropIfExists('admin_role_user');
+        Schema::dropIfExists('admin_roles');
+        Schema::dropIfExists('admin_permissions');
+        Schema::dropIfExists('admin_users');
+        Schema::dropIfExists('pages');
+        Schema::dropIfExists('settings');
     }
 
     /**
@@ -106,18 +113,8 @@ class LaravelAdminCommand extends Command
     protected function updateAssets()
     {
         $this->info("Publishing the assets");
-        if (!(new Filesystem)->isDirectory(public_path('css')))
-        {
-            (new Filesystem)->makeDirectory(public_path('css'));
-        }
-        if (!(new Filesystem)->isDirectory(public_path('js')))
-        {
-            (new Filesystem)->makeDirectory(public_path('js'));
-        }
-
-        static::copyFile('public/css/admin.css', public_path('css/admin.css'));
-        static::copyFile('public/js/admin.js', public_path('js/admin.js'));
         static::copyDirectory('public/material', public_path('material'));
+        static::copyDirectory('public/static-admin', public_path('static-admin'));
     }
 
     protected function migrate()

@@ -16,7 +16,7 @@
     <!-- CSS Files -->
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
     <!-- main Styles -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('static-admin/css/app.css') }}" rel="stylesheet">
 </head>
 <body class="{{ $class ?? '' }}">
     <div class="wrapper wrapper-full-page">
@@ -36,7 +36,7 @@
 <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
 
 <!-- Scripts -->
-<script src="{{ asset('js/admin.js') }}"></script>
+<script src="{{ asset('static-admin/js/app.js') }}"></script>
 @stack('scripts')
 </body>
 </html>

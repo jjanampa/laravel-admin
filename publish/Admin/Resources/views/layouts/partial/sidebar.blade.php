@@ -36,13 +36,13 @@
             </li>
 
             <li class="nav-item active-pro">
-                <a class="nav-link" data-toggle="collapse" href="#userManagement" aria-expanded="true">
+                <a class="nav-link" data-toggle="collapse" href="#configManagement" aria-expanded="true">
                     <i class="material-icons">settings</i>
                     <p>{{ __('Settings') }}
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse show" id="userManagement">
+                <div class="collapse show" id="configManagement">
                     <ul class="nav">
                         <li class="nav-item {{ Request::routeIs('admin.settings.*') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('admin.settings.index') }}">

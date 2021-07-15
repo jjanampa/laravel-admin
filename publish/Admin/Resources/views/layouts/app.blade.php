@@ -17,7 +17,7 @@
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
 
     <!-- main Styles -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('static-admin/css/app.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
 <body class="{{ $class ?? '' }}">
@@ -44,13 +44,13 @@
 <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
 
 <!-- Scripts -->
-<script defer src="{{ asset('js/admin.js') }}"></script>
+<script defer src="{{ asset('static-admin/js/app.js') }}"></script>
 @stack('scripts')
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-        @foreach (['error', 'warning', 'success', 'info'] as $key)
-            @if(Session::has($key))
-                showNotification('{{ $key }}', '{{ Session::get($key) }}')
+        @foreach (['error', 'warning', 'success', 'info'] as $typeAlert)
+            @if(session()->has($typeAlert))
+                showNotification('{{ session()->get($typeAlert) }}', '{{ $typeAlert }}')
             @endif
         @endforeach
     });

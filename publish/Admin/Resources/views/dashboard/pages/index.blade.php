@@ -42,7 +42,7 @@
                                 @foreach($pages as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->title }}</td><td>{{ $item->content }}</td>
+                                        <td>{{ $item->title }}</td><td>{!! $item->content !!}</td>
                                         <td class="text-right">
                                             <a href="{{ route('admin.pages.show' , $item) }}" title="{{ __('View Page') }}"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                             <a href="{{ route('admin.pages.edit' , $item) }}" title="{{ __('Edit Page') }}"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
